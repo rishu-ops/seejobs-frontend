@@ -132,7 +132,7 @@
 <div class="search-result">
 
   <div class="container">
-    <h6 class="">Showing result for <span class="text-info">" Website Designer"</span></h6>
+    <h6 class=""  >Showing result for <span class="text-info" id="showingResultID" >" "</span></h6>
     <ul class="listing-button">
 <button class="btn btn-outline-secondary btn-sm"><a href="" class="text-black">Java</a></button>
 <button class="btn btn-outline-secondary btn-sm"><a href="" class="text-black">PHP</a></button>
@@ -727,10 +727,10 @@ Part Time Job
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#messages" data-toggle="tab">
-                                           <i class="fas fa-user-plus"></i>
-                                           Register
-                                        </a>
+                                      <a class="nav-link" href="register-form.html" >
+                                        <i class="fas fa-user-plus"></i>
+                                        Register
+                                     </a>
                                     </li>
                                     
                                 </ul>
@@ -1087,9 +1087,15 @@ Part Time Job
 <script>
 
 document.addEventListener('DOMContentLoaded', async () => {
-
+ 
   const lookingFor = sessionStorage.getItem('jobTitle');
   const youLiveAt = sessionStorage.getItem('location');
+
+ const showingResult = document.getElementById('showingResultID');
+
+ if(lookingFor) {
+   showingResult.innerHTML = `<span class="text-info" >" ${lookingFor}"</span>`
+ }
 
   const applyFilters = async () => {
     let url = 'http://localhost:5000/api/jobs/search';

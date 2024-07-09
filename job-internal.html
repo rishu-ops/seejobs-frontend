@@ -247,103 +247,22 @@ quis nostrud exercitation ulla </p>
                 <a class="btn btn-sm btn-outline-secondary next" href="" title="more"><i class="fa fa-sm fa-chevron-right"></i></a>
             </div>
         </div>
+        
          <h5 class="text-left float-left mt-3 mb-1">Similar Job</h5>
     </div>
     <div class="container p-t-0 m-t-2 carousel-inner">
       
-        <div class="row row-equal carousel-item active m-t-0">
-         <div class="col-md-4">
-                <div class="card p-2">
-                    <div class="card-img-top card-img-top-250">
-       <!--                  <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
-                    </div>
-<div class="card-block p-t-2">
-<h6 class="small text-wide p-b-2">Aero Technology Pvt Ltd.</h6>
+        <div class="row row-equal carousel-item active m-t-0" id="similarJobId">
 
-<h6><a href="" class="text-danger">Web designer</a></h6>
 
-<p class="small-text1">Corel Draw,Photo-Editing,Photoshop,Web Designing,Web Development</p>
-
-<hr>
-<a href="" class="text-danger">See More</a>
-
-</div>
-</div>
-</div>
-            <div class="col-md-4">
-               <div class="card p-2">
-                    <div class="card-img-top card-img-top-250">
-       <!--                  <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
-                    </div>
-<div class="card-block p-t-2">
-<h6 class="small text-wide p-b-2">Aero Technology Pvt Ltd.</h6>
-
-<h6><a href="" class="text-danger">Web designer</a></h6>
-
-<p class="small-text1">Corel Draw,Photo-Editing,Photoshop,Web Designing,Web Development</p>
-
-<hr>
-<a href="" class="text-danger">See More</a>
-
-</div>
-</div>
-            </div>
-<div class="col-md-4">
-<div class="card p-2">
-<div class="card-img-top card-img-top-250">
-<!--                  <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
-</div>
-<div class="card-block p-t-2">
-<h6 class="small text-wide p-b-2">Aero Technology Pvt Ltd.</h6>
-
-<h6><a href="" class="text-danger">Web designer</a></h6>
-
-<p class="small-text1">Corel Draw,Photo-Editing,Photoshop,Web Designing,Web Development</p>
-
-<hr>
-<a href="" class="text-danger">See More</a>
-
-</div>
-</div>
-            </div>
         </div>
-<div class="row row-equal carousel-item m-t-0">
-<div class="col-md-4">
-<div class="card p-2">
-<div class="card-img-top card-img-top-250">
-<!--                  <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
-</div>
-<div class="card-block p-t-2">
-<h6 class="small text-wide p-b-2">Aero Technology Pvt Ltd.</h6>
 
-<h6><a href="" class="text-danger">Web designer</a></h6>
-
-<p class="small-text1">Corel Draw,Photo-Editing,Photoshop,Web Designing,Web Development</p>
-
-<hr>
-<a href="" class="text-danger">See More</a>
-
-</div>
-</div>
+     <div class="row row-equal carousel-item m-t-0">
+      <div class="col-md-4">
+    
             </div>
-            <div class="col-md-4">
-               <div class="card p-2">
-                    <div class="card-img-top card-img-top-250">
-       <!--                  <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
-                    </div>
-<div class="card-block p-t-2">
-<h6 class="small text-wide p-b-2">Aero Technology Pvt Ltd.</h6>
 
-<h6><a href="" class="text-danger">Web designer</a></h6>
-
-<p class="small-text1">Corel Draw,Photo-Editing,Photoshop,Web Designing,Web Development</p>
-
-<hr>
-<a href="" class="text-danger">See More</a>
-
-</div>
-</div>
-            </div>
+         
             <div class="col-md-4 fadeIn wow">
                 <div class="card p-2">
                     <div class="card-img-top card-img-top-250">
@@ -682,10 +601,10 @@ quis nostrud exercitation ulla </p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#messages" data-toggle="tab">
-                                           <i class="fas fa-user-plus"></i>
-                                           Register
-                                        </a>
+                                      <a class="nav-link" href="register-form.html" >
+                                        <i class="fas fa-user-plus"></i>
+                                        Register
+                                     </a>
                                     </li>
                                     
                                 </ul>
@@ -1430,7 +1349,6 @@ quis nostrud exercitation ulla </p>
 });
 
   
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -1455,6 +1373,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --------------------- get similar jobs -------------------
+   
+    if(jobId) {
+    const container = document.getElementById('similarJobId');
+
+    fetch(`http://localhost:5000/api/jobs/similarjobs/${jobId}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log( 'similar jobs' , data.similarJobs);
+            container.innerHTML = ''; // Clear previous results
+
+            data.similarJobs.forEach(job => {
+                const jobHtml = `
+                    <div class="col-md-4">
+                        <div class="card p-2">
+                            <div class="card-img-top card-img-top-250">
+                                <!-- <img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1"> -->
+                            </div>
+                            <div class="card-block p-t-2">
+                                <h6 class="small text-wide p-b-2">${job.hiringForCompanies}</h6>
+                                <h6><a href="" class="text-danger">${job.jobTitle}</a></h6>
+                                <p class="small-text1">${job.role}</p>
+                                <hr>
+                                <a href="" class="text-danger">See More</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += jobHtml; // Append the new job to the container
+            });
+        })
+        .catch(error => console.error('Error:', error));
+      }
+
+     // --------------------- get the job by id -------------------
 
     if (jobId) {
         // Make an API call to fetch job details based on jobId
@@ -1462,7 +1415,6 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(data => {
                 // Use the fetched data to populate your job details page
-                console.log(data); // Use this data to display job details on your page
 
                 document.querySelector('.one1').textContent = data.job.jobTitle;
                 document.querySelector('.card-text').textContent = data.job.hiringForCompanies;
@@ -1486,8 +1438,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
-
-
 
 </script>
 

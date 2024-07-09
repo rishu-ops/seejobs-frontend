@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const token = localStorage.getItem('token');
     const employertoken = localStorage.getItem('employertoken');
-     
+  
     const authButton = document.getElementById('auth-button');
     const authLink = document.getElementById('auth-link');
     const authBtn = document.getElementById('auth-btn');

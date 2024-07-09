@@ -42,7 +42,7 @@
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="drop">
     <a class="dropdown-item" href="buy-online.html">Buy Online</a>
-    <a class="dropdown-item" href="employer-login.html">Employer Login</a>
+    <a class="dropdown-item" id="employertoken" href="employer-login.html">Employer Login</a>
    
   </div>
 </div>
@@ -72,13 +72,13 @@
           Work From Home<sup><span class="badge badge-danger">New</span></sup>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Banglore</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Delhi</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Kolkata</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Chennai</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Noida</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">Work From Gurugram</a>
-          <a class="dropdown-item" href="work-home-page-inner.html">View All Work From Home</a>
+          <a class="dropdown-item" href="job-listing.html?location=Banglore">Work From Banglore</a>
+          <a class="dropdown-item" href="job-listing.html?location=Delhi">Work From Delhi</a>
+          <a class="dropdown-item" href="job-listing.html?location=Kolkata">Work From Kolkata</a>
+          <a class="dropdown-item" href="job-listing.html?location=Chennai">Work From Chennai</a>
+          <a class="dropdown-item" href="job-listing.html?location=Noida">Work From Noida</a>
+          <a class="dropdown-item" href="job-listing.html?location=Gurugram">Work From Gurugram</a>
+          <a class="dropdown-item" href="job-listing.html?location=remote">View All Work From Home</a>
         </div>
       </li>
 
@@ -129,10 +129,11 @@
 <div class="row">
 <div class="col-md-8">
     <a href="" class="float-right mr-3 text-primary mt-1">Next</a>
-  <p class="text-info top-app-para"><a href ="http://127.0.0.1:5500/seejob/seejob/find-cv-employee.html"  >Application for software developer &#10095; <span class="text-black" id="navbarId">Naina Deshmukh </span></a></p>
+  
+    <p class="text-info top-app-para"> <a href ="http://127.0.0.1:5500/seejob/seejob/find-cv-employee.html"  >Application for software developer </a> &#10095; <span class="text-black" id="navbarId">Naina Deshmukh </span></p>
 
 <div class="card-button">
-  <button class="btn-sm btn btn-outline-secondary" data-toggle="modal" data-target="#emailModal"><i class="far fa-envelope"></i> Email</button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"> <i class="fas fa-share"></i> Forward</button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"><i class="fas fa-download"></i> Download</button>&nbsp;<button class="btn-sm btn btn-outline-secondary"><i class="fas fa-check"></i> Shortlist </button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"><i class="far fa-trash-alt"></i> Delete</button>&nbsp;<button class="btn-sm btn btn-outline-secondary"><i class="fas fa-times"></i> Reject</button> &nbsp;<button class="btn-sm btn btn-outline-secondary"><i class="fas fa-history"></i> Hold</button> &nbsp;<button class="btn-sm btn btn-outline-success"><i class="fab fa-whatsapp"></i> Whatsapp</button>
+  <button class="btn-sm btn btn-outline-secondary" data-toggle="modal" data-target="#emailModal"><i class="far fa-envelope"></i> Email</button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"> <i class="fas fa-share"></i> Forward</button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"><i class="fas fa-download"></i> Download</button>&nbsp;<button class="btn-sm btn btn-outline-secondary" id="shortListId" ><i class="fas fa-check"></i> Shortlist </button>&nbsp;  <button class="btn-sm btn btn-outline-secondary"><i class="far fa-trash-alt"></i> Delete</button>&nbsp;<button class="btn-sm btn btn-outline-secondary" id="rejectId" ><i class="fas fa-times"></i> Reject</button> &nbsp;<button class="btn-sm btn btn-outline-secondary"><i class="fas fa-history"></i> Hold</button> &nbsp;<button class="btn-sm btn btn-outline-success"><i class="fab fa-whatsapp"></i> Whatsapp</button>
 
   </div><!-- card -->
 
@@ -141,7 +142,7 @@
 <div class="card card-job-internal mb-3">
   <div class="card-body">
     <div class="right-img">
-  <img src="images/gir.jpg" class="img-fluid float-right app-img">
+  <img id="imageId" src="images/gir.jpg" class="img-fluid float-right app-img">
 </div><!-- right-img -->
 <div class="left-data">
   <h5 class="one1 pt-2" id="userNameId">Naina Desshmukh </h5>
@@ -163,22 +164,22 @@
 
 <div class="row" id="detail-div">
   <div class="col-md-6">
-<p class="text-secondary pt-4">Current Designation:<strong> Software Developer </strong> </p>
+<p class="text-secondary pt-4">Current Designation:<strong > Software Developer </strong> </p>
 <p class="text-secondary">Current Company:<strong id="companyId"> ABC Pvt Ltd. </strong> </p>
 <p class="text-secondary" >Current Location:<strong id="locationID" > Delhi/NCR </strong> </p>
 <p class="text-secondary">Pref. Location:<strong> Gurugaon </strong> </p>
 <p class="text-secondary">Functional area:<strong> other </strong> </p>
 <p class="text-secondary">Role:<strong> other </strong> </p>
-<p class="text-secondary">Industry:<strong> Education/IT/Software </strong> </p>
+<p class="text-secondary">Industry:<strong id="industyrId"> Education/IT/Software </strong> </p>
 
   </div><!-- 6 -->
 
    <div class="col-md-6">
 <p class="text-secondary pt-4">Total Experience:<strong id="expirenceId"> 2 Years/6 Month </strong> </p>
-<p class="text-secondary">Annual Salary:<strong> Rs 3.6Lakh. </strong> </p>
+<p class="text-secondary">Annual Salary:<strong id="annualSalaryID"> Rs 3.6Lakh. </strong> </p>
 <p class="text-secondary ">Expected CTC:<strong> Not Mentioned </strong> </p>
 <p class="text-secondary ">Highest Degree:<strong> Bsc </strong> </p>
-<p class="text-secondary">Notice Period:<strong> 15days or Less </strong> </p>
+<p class="text-secondary">Notice Period:<strong id="noticePeriodId" > 15days or Less </strong> </p>
 
 
   </div><!-- 6 -->
@@ -373,7 +374,7 @@
   <div class="card-body mt-4 p-2" style="padding:0rem">
  <h6 class="one1 bg-light p-2 text-success">Attached Documents</h6>
 
-<div class="row">
+ <div class="row">
   <div class="col-md-1 mt-1">
     <img src="images/resume.png" class="img-fluid image">
   </div><!-- 2 -->
@@ -384,7 +385,8 @@
   </div><!-- 10 -->
 
   <div class="col-md-3">
-    <a href="" class="text-small text"><i class="fas fa-file-download"></i> Download</a> &nbsp; <a href="" class="text-small text"><i class="far fa-trash-alt"></i> Delete</a>
+    <a href="#" class="text-small text" id="download-link"><i class="fas fa-file-download"></i> Download</a> &nbsp; 
+    <a href="" class="text-small text"><i class="far fa-trash-alt"></i> Delete</a>
   </div><!-- 10 -->
 </div><!-- row -->
 
@@ -827,10 +829,10 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#messages" data-toggle="tab">
-                                           <i class="fas fa-user-plus"></i>
-                                           Register
-                                        </a>
+                                      <a class="nav-link" href="register-form.html" >
+                                        <i class="fas fa-user-plus"></i>
+                                        Register
+                                     </a>
                                     </li>
                                     
                                 </ul>
@@ -1566,7 +1568,61 @@ if (userId) {
                 // Use the fetched data to populate your job details page
                 console.log(data); // Use this data to display job details on your page
 
-                
+
+                // ------------------------- shortlist--------------------
+
+                const shortList = document.getElementById('shortListId');
+                        
+                        if (shortList ) {
+                            shortList.addEventListener('click', function() {
+                                let shortListCounts = JSON.parse(localStorage.getItem('shortListCounts')) || {};
+                                
+                                if (!shortListCounts[data.user._id]) {
+                                    shortListCounts[data.user._id] = 1;
+                                    localStorage.setItem('shortListCounts', JSON.stringify(shortListCounts));
+                    
+                                }
+                              
+                            });
+                        }
+
+                    // ----------------- reject-------------------------
+
+              const reject = document.getElementById('rejectId');
+
+              if(reject) {
+                 reject.addEventListener('click' , function () {
+                  let rejectCounts = JSON.parse(localStorage.getItem('rejectCounts')) || {};
+                                
+                                if (!rejectCounts[data.user._id]) {
+                                    rejectCounts[data.user._id] = 1;
+                                    localStorage.setItem('rejectCounts', JSON.stringify(rejectCounts));
+                    
+                                }
+                              
+                 })
+              }
+              
+                let basePathToRemove = "/home/rishu/Documents/Frount end ekta/";
+
+     let relativePath = data.user.image.replace(basePathToRemove, "");
+    //  let resumeReleventPath = data.user.resume.replace(basePathToRemove , "");
+
+              let finalUrl = `/${relativePath}`;
+              // let finalResumePath = `/${resumeReleventPath}`
+
+              // ------------ downloading cv -------------------
+
+  //     document.getElementById('download-link').addEventListener('click', function(e) {
+  //   e.preventDefault();
+  //   const fileUrl = finalResumePath;
+  //   const a = document.createElement('a');
+  //   a.href = fileUrl;
+  //   a.download = 'Updated_Resume.pdf';
+  //   document.body.appendChild(a);
+  //   a.click();
+  //   document.body.removeChild(a);
+  // });
 
     document.getElementById('userNameId').textContent = data.user.username
     document.getElementById('navbarId').textContent = data.user.username
@@ -1574,10 +1630,14 @@ if (userId) {
     document.getElementById('phoneId').innerHTML = `<span class="small-text1"> <em><i class="fas fa-phone-alt text-success"></i></em> <strong>${data.user.phone}</strong> </span> `  
     document.getElementById('disciprtionId').innerHTML = `<span class="small-text1"> <em><i class="fas fa-phone-alt text-success"></i></em> <strong>${data.user.description}</strong> </span> `  
     document.getElementById('locationID').innerHTML = `<strong>${ data.user.location}</strong>  `  
-    document.getElementById('companyId').innerHTML = `<strong>${ data.user.industry}</strong>  `  
+    document.getElementById('industyrId').innerHTML = `<strong>${ data.user.industry}</strong>  `  
     document.getElementById('expirenceId').innerHTML = `<strong> ${ data.user.maxExperience} </strong>  `  
-    document.getElementById('skillId').innerHTML = `<strong> ${ data.user.skills} </strong>  `  
-
+    document.getElementById('skillId').innerHTML = `<strong>${ data.user.skills}</strong>  `  
+    document.getElementById('annualSalaryID').innerHTML = `<strong>${ data.user.salary}</strong> Lpa  `  
+    document.getElementById('companyId').textContent =  data.user.company   
+    document.getElementById('noticePeriodId').innerHTML =  `<strong>${ data.user.period}</strong> Days `  
+    let imageElement = document.getElementById('imageId');
+    imageElement.src = finalUrl
             })
             .catch(error => {
                 console.error('Failed to fetch job details:', error);
